@@ -1,0 +1,362 @@
+.login-system {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+.login-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  transition: background 0.6s ease;
+  padding: 2rem;
+}
+
+.student-theme {
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+}
+
+.teacher-theme {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.top-right {
+  top: -60px;
+  right: -60px;
+  height: 150px;
+  width: 150px;
+  background-color: #fde68a;
+}
+
+.bottom-left {
+  bottom: -90px;
+  left: -90px;
+  height: 180px;
+  width: 180px;
+  background-color: #93c5fd;
+}
+
+.decorative-square {
+  position: absolute;
+  opacity: 0;
+  background-color: white;
+  border-radius: 12px;
+  animation: fadeIn 0.5s forwards 0.3s;
+  transition: all 0.3s ease;
+}
+
+.bottom-right {
+  bottom: -30px;
+  right: -30px;
+  height: 120px;
+  width: 120px;
+  opacity: 0.3;
+  transform: rotate(45deg);
+}
+
+.top-left {
+  top: 80px;
+  left: -45px;
+  height: 90px;
+  width: 90px;
+  opacity: 0.3;
+  transform: rotate(-30deg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+.welcome-view,
+.login-view,
+.register-view {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.animate-in {
+  animation: fadeSlideIn 0.5s forwards;
+}
+
+.animate-out {
+  animation: fadeSlideOut 0.3s forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.view-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.view-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.primary-button {
+  padding: 0.75rem 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.primary-button:hover {
+  background-color: #4338ca;
+  transform: scale(1.05);
+}
+
+.primary-button:active {
+  transform: scale(0.95);
+}
+
+.secondary-button {
+  padding: 0.75rem 1rem;
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.secondary-button:hover {
+  background-color: #d1d5db;
+  transform: scale(1.05);
+}
+
+.secondary-button:active {
+  transform: scale(0.95);
+}
+
+.back-button {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.back-button:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.selection-prompt {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+.user-type-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-type-button {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-type-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.user-type-button:active {
+  transform: scale(0.95);
+}
+
+.user-type-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-type-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  transform: scale(1.01);
+}
+
+.form-help {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-link {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.form-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: white;
+  color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.03);
+}
+
+.submit-button:active {
+  transform: scale(0.97);
+}
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-button:hover {
+  color: white;
+}

@@ -1,0 +1,370 @@
+.exams-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.exams-content {
+  margin-left: 70px;
+  margin-top: 90px;
+  padding: 2rem;
+  width: calc(100% - 70px);
+}
+
+.exams-header {
+  margin-bottom: 2rem;
+}
+
+.exams-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.exams-header p {
+  color: #7f8c8d;
+  margin-top: 0.5rem;
+}
+
+.exams-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+}
+
+.filter-dropdown select {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-dropdown select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.exams-table-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.exams-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.exams-table thead {
+  background-color: #f8f9fa;
+}
+
+.exams-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+}
+
+.exams-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.exam-row {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.exam-row:hover {
+  background-color: #f8f9fa;
+}
+
+.exam-row.unscheduled {
+  opacity: 0.7;
+}
+
+.course-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.course-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-title-exams {
+  font-weight: 500;
+  color: black;
+}
+
+.course-id {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.date-cell,
+.location-cell {
+  vertical-align: middle;
+}
+
+.date-info,
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-icon {
+  color: #7f8c8d;
+}
+
+.days-remaining {
+  margin-left: 0.75rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+}
+
+.expand-cell {
+  text-align: center;
+}
+
+.details-row {
+  background-color: #f8f9fa;
+}
+
+.exam-details {
+  padding: 1.5rem;
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section h4 {
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+
+.detail-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.additional-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+}
+
+.countdown-section {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.countdown-box {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.countdown-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.no-exams {
+  padding: 2rem;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+body.dark-theme .exams-container {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-theme .exams-header h1 {
+  color: #f7f7f7;
+}
+
+body.dark-theme .exams-header p {
+  color: #b0b0b0;
+}
+
+body.dark-theme .search-box input,
+body.dark-theme .filter-dropdown select {
+  background-color: #252540;
+  border-color: #34344e;
+  color: #f7f7f7;
+}
+
+body.dark-theme .search-icon {
+  color: #b0b0b0;
+}
+
+body.dark-theme .exams-table-container {
+  background-color: #252540;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .exams-table thead {
+  background-color: #34344e;
+}
+
+body.dark-theme .exams-table th {
+  color: #f7f7f7;
+  border-bottom-color: #34344e;
+}
+
+body.dark-theme .exams-table td {
+  border-bottom-color: #34344e;
+}
+
+body.dark-theme .exam-row:hover {
+  background-color: #34344e;
+}
+
+body.dark-theme .course-id {
+  color: #b0b0b0;
+}
+
+body.dark-theme .details-row {
+  background-color: #34344e;
+}
+
+body.dark-theme .detail-section h4 {
+  color: #f7f7f7;
+}
+body.dark-theme .course-title-exams {
+  color: #ffffff;
+}
+
+body.dark-theme .detail-section p,
+body.dark-theme .info-item {
+  color: #b0b0b0;
+}
+
+body.dark-theme .days-remaining {
+  background-color: #0d47a1;
+  color: #bbdefb;
+}
+
+body.dark-theme .countdown-box {
+  background-color: #0d47a1;
+  color: #bbdefb;
+}
+
+body.dark-theme .no-exams {
+  color: #b0b0b0;
+}
+
+@media (max-width: 768px) {
+  .exams-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .exams-table thead {
+    display: none;
+  }
+
+  .exams-table tr {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 2px solid #eee;
+  }
+
+  .exams-table td {
+    padding: 0.5rem 0;
+    border-bottom: none;
+  }
+
+  .exam-row {
+    flex-direction: column;
+  }
+
+  .expand-cell {
+    text-align: right;
+    padding-top: 0.5rem;
+  }
+
+  .additional-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.dark-theme .exams-table tr {
+    border-bottom-color: #34344e;
+  }
+}

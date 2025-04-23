@@ -1,0 +1,488 @@
+.dashboard-content-attendance {
+  margin-left: 70px;
+  margin-top: 90px;
+  padding: 5rem;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.attendance-header {
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.attendance-title h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #202124;
+  font-weight: 600;
+}
+
+.attendance-title p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  margin-bottom: 1.5rem;
+}
+
+.attendance-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+}
+
+.summary-card:hover::after {
+  transform: translateX(0);
+}
+
+.summary-icon {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(66, 133, 244, 0.1);
+}
+
+.total-classes .summary-icon {
+  background-color: rgba(66, 133, 244, 0.1);
+  color: #4285f4;
+}
+
+.present .summary-icon {
+  background-color: rgba(52, 168, 83, 0.1);
+  color: #34a853;
+}
+
+.absent .summary-icon {
+  background-color: rgba(234, 67, 53, 0.1);
+  color: #ea4335;
+}
+
+.points .summary-icon {
+  background-color: rgba(251, 188, 5, 0.1);
+  color: #fbbc05;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.summary-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 0.2rem;
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  color: #5f6368;
+}
+
+.attendance-progress {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4285f4, #34a853);
+  border-radius: 3px;
+  transition: width 1s ease-in-out;
+}
+
+.attendance-filter-section {
+  margin-bottom: 2rem;
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #5f6368;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.filter-toggle:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  color: #4285f4;
+}
+
+.filter-toggle span {
+  margin: 0 0.5rem;
+}
+
+.filters-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  animation: expand 0.3s ease-in-out;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #5f6368;
+}
+
+.filter-group select {
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  font-size: 1rem;
+  color: #202124;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+.attendance-records {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.attendance-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.5s ease-in-out both;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.attendance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.attendance-card.present {
+  background: linear-gradient(to right bottom, white, rgba(52, 168, 83, 0.05));
+}
+
+.attendance-card.absent {
+  background: linear-gradient(to right bottom, white, rgba(234, 67, 53, 0.05));
+}
+
+.attendance-date {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #5f6368;
+}
+
+.attendance-date svg {
+  margin-right: 0.5rem;
+}
+
+.attendance-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #202124;
+  font-weight: 500;
+}
+
+.teacher-name {
+  font-size: 0.9rem;
+  color: #5f6368;
+}
+
+.attendance-status {
+  margin-top: 0.5rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.present-status {
+  background-color: rgba(52, 168, 83, 0.1);
+  color: #34a853;
+}
+
+.absent-status {
+  background-color: rgba(234, 67, 53, 0.1);
+  color: #ea4335;
+}
+
+.status svg {
+  margin-right: 0.4rem;
+}
+
+.extra-points {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #fbbc05;
+  font-weight: 500;
+}
+
+.extra-points svg {
+  margin-right: 0.4rem;
+}
+
+.comment {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.comment p {
+  font-style: italic;
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+
+.no-records {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.no-records p {
+  color: #5f6368;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8);
+    transform-origin: top;
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+body.dark-theme .dashboard-content-attendance {
+  background-color: #1a1a2e;
+}
+
+body.dark-theme .attendance-title h1 {
+  color: #f7f7f7;
+}
+
+body.dark-theme .attendance-title p {
+  color: #b0b0b0;
+}
+
+body.dark-theme .summary-card {
+  background: linear-gradient(135deg, #1e1e30, #252540);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .summary-card::after {
+  background: linear-gradient(to right, transparent, rgba(30, 30, 48, 0.8));
+}
+
+body.dark-theme .summary-value {
+  color: #f7f7f7;
+}
+
+body.dark-theme .summary-label {
+  color: #b0b0b0;
+}
+
+body.dark-theme .filter-toggle {
+  background: #252540;
+  color: #f7f7f7;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .filter-toggle:hover {
+  background: #34344e;
+}
+
+body.dark-theme .filters-container {
+  background: #252540;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .filter-group label {
+  color: #b0b0b0;
+}
+
+body.dark-theme .filter-group select {
+  background: #1e1e30;
+  border-color: #34344e;
+  color: #f7f7f7;
+}
+
+body.dark-theme .filter-group select:hover,
+body.dark-theme .filter-group select:focus {
+  border-color: #6c8eff;
+}
+
+body.dark-theme .attendance-card {
+  background: #252540;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .attendance-card.present {
+  background: linear-gradient(
+    to right bottom,
+    #252540,
+    rgba(52, 168, 83, 0.15)
+  );
+}
+
+body.dark-theme .attendance-card.absent {
+  background: linear-gradient(
+    to right bottom,
+    #252540,
+    rgba(234, 67, 53, 0.15)
+  );
+}
+
+body.dark-theme .attendance-date,
+body.dark-theme .teacher-name,
+body.dark-theme .comment p {
+  color: #b0b0b0;
+}
+
+body.dark-theme .attendance-details h3 {
+  color: #f7f7f7;
+}
+
+body.dark-theme .progress-bar {
+  background: linear-gradient(90deg, #6c8eff, #34a853);
+}
+
+body.dark-theme .attendance-progress {
+  background: #34344e;
+}
+
+body.dark-theme .no-records {
+  background: #252540;
+}
+
+body.dark-theme .no-records p {
+  color: #b0b0b0;
+}
+
+@media (max-width: 768px) {
+  .attendance-summary {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .attendance-records {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+}

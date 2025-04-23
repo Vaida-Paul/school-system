@@ -1,0 +1,93 @@
+.vertical-navbar {
+  width: 80px;
+  height: 95vh;
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  z-index: 900;
+  transition: width 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+  margin: 0;
+  height: 100%;
+}
+
+.nav-item {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0;
+  color: #5c5c5c;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-item a:hover {
+  background-color: #7297e0;
+}
+
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #2563eb;
+  border-radius: 0 3px 3px 0;
+}
+
+.tooltip {
+  position: absolute;
+  left: 70px;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: nowrap;
+}
+
+.nav-item a:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.dark-theme .vertical-navbar {
+  background-color: #1a1a2e;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .nav-item a {
+  color: #b0b0b0;
+}
+
+body.dark-theme .nav-item a:hover,
+body.dark-theme .nav-item.active a {
+  color: #6c8eff;
+}
+
+body.dark-theme .nav-item.active::before {
+  background-color: #6c8eff;
+}
+
+.icon {
+  height: 45px;
+}

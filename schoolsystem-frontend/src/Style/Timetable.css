@@ -1,0 +1,155 @@
+.timetable-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.timetable-content {
+  /* margin-left: 70px; */
+  margin-top: 90px;
+  /* padding: 2rem; */
+}
+.navbar-student {
+  margin-left: 70px;
+}
+.timetable-header {
+  margin-bottom: 2rem;
+}
+
+.timetable-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.timetable-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.timetable {
+  background-color: #fff;
+  /* border-radius: 12px; */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.timetable-grid {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  gap: 1px;
+  min-width: 900px;
+  background-color: #f0f4f8;
+}
+
+.time-header,
+.day-header {
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+
+.day-header {
+  background-color: #f8fafc;
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid #e1e7ed;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.time-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  font-size: 0.85rem;
+  color: #666;
+  border-right: 1px solid #e1e7ed;
+}
+
+.empty-cell {
+  background-color: #fff;
+  min-height: 60px;
+}
+
+.course-cell {
+  padding: 0.75rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 60px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.course-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.course-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.course-teacher {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+
+.course-time {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: auto;
+}
+
+body.dark-theme .timetable-header h1 {
+  color: #f7f7f7;
+}
+
+body.dark-theme .timetable-header p {
+  color: #b0b0b0;
+}
+
+body.dark-theme .timetable {
+  background-color: #1a1a2e;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .timetable-grid {
+  background-color: #252540;
+}
+
+body.dark-theme .time-header,
+body.dark-theme .day-header,
+body.dark-theme .empty-cell {
+  background-color: #1a1a2e;
+  color: #f7f7f7;
+}
+
+body.dark-theme .day-header {
+  background-color: #252540;
+  border-bottom: 2px solid #34344e;
+}
+
+body.dark-theme .time-slot {
+  background-color: #1a1a2e;
+  color: #b0b0b0;
+  border-right: 1px solid #34344e;
+}
+
+body.dark-theme .course-cell:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+body.dark-theme .course-title,
+body.dark-theme .course-teacher,
+body.dark-theme .course-time {
+  color: #102038;
+}
